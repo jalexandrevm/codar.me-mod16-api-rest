@@ -28,7 +28,6 @@ class EnderecoSerializer(serializers.ModelSerializer):
 
     def validate_prestador(self, value):
         try:
-            print()
             prestador_banco = User.objects.get(username=value)
         except User.DoesNotExist:
             raise serializers.ValidationError("Usuário não existe!")
